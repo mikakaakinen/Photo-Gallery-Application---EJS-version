@@ -5,7 +5,7 @@
   "main": "index.jsx",
   "scripts": {
     "server": "nodemon server.js",
-    "start": "node server.js",
+    "start": "node ./bin/www",
     "lint": "eslint ./src/*.jsx",
     "lint-fix": "eslint --fix ./src/*.jsx",
     "lint-scss": "stylelint \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache"

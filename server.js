@@ -86,7 +86,10 @@ app.get('/', (req, res) => {
   res.render('app');
 });
 
+/*
 app.listen('3000' || process.env.PORT, (err) => {
   if (err) { throw err; }
   console.log('Server started');
-});
+}); */
+
+module.exports = app;
