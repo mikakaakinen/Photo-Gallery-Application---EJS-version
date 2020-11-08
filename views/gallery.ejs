@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Uploading</title>
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <script src="./bootstrap.min.js"></script>
+  </head>
+  <body class="lightblue">
+    <div class="container-fluid">
+      <div class="row justify-content-center header-footer py-3">
+        <div class="col-auto">
+          <h1>GALLERY</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center address-gallery">
+        <div class="col-auto">
+          <a href="/">HOME</a>
+        </div>
+        <div class="col-auto">
+          <a href="#">GALLERY</a>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="grid">
+          <% items.forEach(function(image) { %>
+          <div class="grid-item">
+            <figure class="img-hover-zoom">
+              <img
+                src="data:image/<%=image.img.contentType%>;base64,  
+          <%=image.img.data%>"
+                class="img"
+              />
+              <figcaption><%= image.title %></figcaption>
+            </figure>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <div class="row justify-content-center header-footer pt-4 pb-2">
+        <div class="col-auto">
+          <h5>
+            Made with
+            <span class="red">&hearts;</span>
+            in Riihim&auml;ki, Finland
+          </h5>
+        </div>
+      </div>
+      <div class="row justify-content-center header-footer pb-3">
+        <div class="col-auto">
+          <h5>By Mika Kaakinen</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

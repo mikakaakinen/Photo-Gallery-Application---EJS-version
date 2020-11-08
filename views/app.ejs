@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Uploading</title>
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <script src="./bootstrap.min.js"></script>
+  </head>
+
+  <body class="lightblue">
+    <div class="container-fluid">
+      <div class="row justify-content-center header-footer py-3">
+        <div class="col-auto">
+          <h1>PHOTO GALLERY APP</h1>
+        </div>
+      </div>
+      <% if (typeof error != "undefined" && error) { %>
+      <div class="row justify-content-center warning py-3">
+        <div class="col-auto">
+          <h5><%= error %></h5>
+        </div>
+      </div>
+      <% } %> <% if (typeof success != "undefined" && success) { %>
+      <div class="row justify-content-center success py-3">
+        <div class="col-auto">
+          <h5><%= success %></h5>
+        </div>
+      </div>
+      <% } %>
+      <div class="row justify-content-center address">
+        <div class="col-auto">
+          <a href="#">HOME</a>
+        </div>
+        <div class="col-auto">
+          <a href="/gallery">GALLERY</a>
+        </div>
+      </div>
+      <form action="/" method="POST" enctype="multipart/form-data">
+        <div class="row justify-content-center pt-4 pb-3">
+          <div class="col-auto">
+            <label for="name" class="pr-3">Image Title</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Title"
+              value=""
+              name="title"
+              required
+              class="input-style"
+            />
+          </div>
+        </div>
+        <div class="row justify-content-center pt-2 pb-2">
+          <div class="col-auto">
+            <label for="image"><h5 class="underline">Upload Image</h5></label>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <input type="file" id="image" name="image" value="" required />
+          </div>
+        </div>
+        <div class="row justify-content-center py-4">
+          <div class="col-auto">
+            <button class="button" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+      <div class="row justify-content-center header-footer pt-4 pb-2">
+        <div class="col-auto">
+          <h5>
+            Made with
+            <span class="red">&hearts;</span>
+            in Riihim&auml;ki, Finland
+          </h5>
+        </div>
+      </div>
+      <div class="row justify-content-center header-footer pb-3">
+        <div class="col-auto">
+          <h5>By Mika Kaakinen</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
