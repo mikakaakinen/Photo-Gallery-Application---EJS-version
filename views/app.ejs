@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Uploading</title>
+    <title>Photo Gallery Application</title>
     <link rel="stylesheet" href="./app.css" />
     <link rel="stylesheet" href="./bootstrap.min.css" />
     <script src="./bootstrap.min.js"></script>
@@ -11,9 +11,14 @@
 
   <body class="lightblue">
     <div class="container-fluid">
-      <div class="row justify-content-center header-footer py-3">
+      <div class="row justify-content-center header-footer pt-3">
         <div class="col-auto">
           <h1>PHOTO GALLERY APP</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center header-footer pt-1 pb-3">
+        <div class="col-auto">
+          <h3>EJS-version</h3>
         </div>
       </div>
       <% if (typeof error != "undefined" && error) { %>

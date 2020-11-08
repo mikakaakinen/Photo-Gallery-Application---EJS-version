@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const mongoose = require('mongoose');
+const { config } = require('dotenv');
 
 // CREATE EXPRESS APP
 const app = express();
@@ -10,8 +11,10 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+config(); // invoking the dotenv config here
+const uri = process.env.ATLAS_URI;
 
-const db = mongoose.connect('mongodb+srv://mikak:cQzvBYICVp7QTZwf@cluster0.cpa6u.gcp.mongodb.net/imagegallery?retryWrites=true&w=majority', {
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -86,10 +89,9 @@ app.get('/', (req, res) => {
   res.render('app');
 });
 
-/*
 app.listen('3000' || process.env.PORT, (err) => {
   if (err) { throw err; }
   console.log('Server started');
-}); */
+});
 
 module.exports = app;
